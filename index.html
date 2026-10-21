@@ -2,7 +2,7 @@
 <html lang="uz" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
 <title>Kunlik</title>
 <meta name="description" content="Bugungi intizom. Ertangi natija.">
 <meta name="theme-color" content="#0c110f">
@@ -14,10 +14,15 @@
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
+<script>
+(function(){var shown=false;function show(msg){if(shown)return;var b=document.querySelector('.boot');if(!b)return;shown=true;b.innerHTML='<div style="max-width:320px;padding:0 12px"><b style="color:#e8f1ec">Kunlik yuklanmadi</b><p style="margin:8px 0">'+msg+'</p><button onclick="location.reload()" style="padding:10px 16px;border-radius:12px;border:0;background:#6ee7b7;color:#06251a;font-weight:700">Qayta urinish</button></div>'}
+window.addEventListener('error',function(e){var t=e.target;if(t&&(t.src||t.href))show('Fayl topilmadi: '+(t.src||t.href).split('/').pop()+'. index.html, app.js, style.css bir papkada bo\'lishi kerak.');else show('Xato: '+String(e.message||'').slice(0,120))},true);
+setTimeout(function(){show("Ilova fayllari yuklanmadi. Havola GitHub Pages manzili ekanini va index.html, app.js, style.css bir papkada ekanini tekshiring.")},4000)})();
+</script>
 </head>
 <body>
 <nav id="nav" aria-label="Asosiy menyu"></nav>
-<main id="view" tabindex="-1"></main>
+<main id="view" tabindex="-1"><div class="boot"><img src="icon-192.png" alt=""><div>Yuklanmoqda…</div></div></main>
 <button id="fab" data-act="fab" aria-label="Qo'shish" hidden></button>
 <div id="sheet-root"></div>
 <div id="toast" role="status" aria-live="polite"></div>
